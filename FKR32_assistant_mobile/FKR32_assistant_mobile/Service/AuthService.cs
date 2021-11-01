@@ -1,22 +1,26 @@
-﻿namespace FKR32_assistant_mobile.Models
+﻿namespace FKR32_assistant_mobile.Service
 {
-    internal class AuthService
+    public class AuthService
     {
         private readonly string _loginName = "Pavel";
 
-        private bool CheckLogin(string log)
+        public bool CheckLogin(string login)
         {
             bool result = false;
-            if (log == _loginName)
+            
+            if (login == _loginName)
+            {
                 result = true;
+            }
+
             return result;
         }
 
-        public string Authorization(string log)
+        public string Authorization(string login)
         {
             string result;
 
-            if (CheckLogin(log) == true)
+            if (CheckLogin(login))
                 result = "Authorization completed";
             else
                 result = "Authorization not completed";

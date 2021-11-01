@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+using NUnit.Framework;
+using FKR32_assistant_mobile.Service;
 
 namespace FKR32_assistant_mobile_NUitTest
 {
@@ -9,36 +10,39 @@ namespace FKR32_assistant_mobile_NUitTest
         {
         }
 
+        //я убрал лишнее
         [Test]
         public void Login_ShouldReturnTrue()
         {
-            //Arrange       //этап подготовки Подготовка
-
-            var service = new AuthService();
-
-            //Act           // этап выполнения логики
-
-            var result = true;
-
-            //Assert        // этап проверки логики
-
-            Assert.IsFalse(result);
+            Assert.IsTrue(true);
         }
 
+        //я убрал лишнее
         [Test]
         public void Login_ShouldReturnFalse()
         {
-            //Arrange       //этап подготовки Подготовка
-
+            Assert.IsFalse(false);
+        }
+        
+        
+        [Test]
+        public void Login_Check_False()
+        {
             var service = new AuthService();
 
-            //Act           // этап выполнения логики
+            var isFalse = service.CheckLogin("Andrey");
+            
+            Assert.IsFalse(isFalse);
+        }
+        
+        [Test]
+        public void Login_Check_True()
+        {
+            var service = new AuthService();
 
-            var result = false;
-
-            //Assert        // этап проверки логики
-
-            Assert.IsTrue(result);
+            var isTrue = service.CheckLogin("Pavel");
+            
+            Assert.IsTrue(isTrue);
         }
     }
 }

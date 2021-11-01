@@ -1,25 +1,39 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="FKR32_assistant_mobile.CalculatorPage">
+<ContentPage x:Class="FKR32_assistant_mobile.CalculatorPage"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
     <ContentPage.Content>
-        
+
         <StackLayout Orientation="Vertical">
 
-        <Entry x:Name="ValueAEntry" AutomationId="Argument1" FontSize="40"/>
+            <Entry x:Name="ValueAEntry"
+                   AutomationId="Argument1"
+                   FontSize="40" />
 
-        <Entry x:Name="ValueBEntry" AutomationId="Argument1" FontSize="40"/>
+            <Entry x:Name="ValueBEntry"
+                   AutomationId="Argument2"
+                   FontSize="40" />
 
-        <Button Text="Add" AutomationId="ButtonSumm" BackgroundColor="Gainsboro"
-            TextColor="Black" FontSize="40" Clicked="Add_Clicked"/>
+            <Button AutomationId="ButtonSumm"
+                    BackgroundColor="Gainsboro"
+                    Clicked="Add_Clicked"
+                    FontSize="40"
+                    Text="Add"
+                    TextColor="Black" />
 
-        <Button Text="Multiply" AutomationId="ButtonMultiply" BackgroundColor="Gainsboro" TextColor="Black"
-            FontSize="40" Clicked="Multiply_Clicked"/>
+            <Button AutomationId="ButtonMultiply"
+                    BackgroundColor="Gainsboro"
+                    Clicked="Multiply_Clicked"
+                    FontSize="40"
+                    Text="Multiply"
+                    TextColor="Black" />
 
-        <Label x:Name="ResultLabel" AutomationId="ResultLabel" FontSize="40"/>
+            <Label x:Name="ResultLabel"
+                   AutomationId="ResultLabel"
+                   FontSize="40" />
 
         </StackLayout>
-    
+
     </ContentPage.Content>
-    
+
 </ContentPage>

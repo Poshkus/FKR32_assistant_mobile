@@ -4,8 +4,8 @@ using Xamarin.UITest;
 
 namespace FKR32_assistant_mobile_UITest
 {
-    [TestFixture(Platform.Android)]
-    //[TestFixture(Platform.iOS)]
+    //[TestFixture(Platform.Android)]
+    [TestFixture(Platform.iOS)]
     public class UITest_CalcPage
     {
         IApp app;
@@ -31,8 +31,8 @@ namespace FKR32_assistant_mobile_UITest
             app.Tap("OpenCalculatorPage");
             app.Screenshot("OpenCalculatorPage");
 
-            app.EnterText("ValueAEntry", "5");
-            app.EnterText("ValueAEntry", "7");
+            app.EnterText("Argument1", "5");
+            app.EnterText("Argument2", "7");
 
 
             //Act           // этап выполнения логики
@@ -42,6 +42,8 @@ namespace FKR32_assistant_mobile_UITest
             //Assert        // этап проверки логики
 
             var sumResult = app.Query("ResultLabel").First(result => result.Text == "12");
+            
+            app.Screenshot("Result Screenshot");
             Assert.IsTrue(sumResult != null, "Label is not displaying the right result!");
         }
     }
